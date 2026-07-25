@@ -1,0 +1,62 @@
+BIOCORE SOLUTION WEBSITE — GODADDY CPANEL DEPLOYMENT
+====================================================
+
+PACKAGE CONTENTS
+- index.html — Home / Who We Are
+- products-specializations.html — products and category filtering
+- contact.html — inquiry page
+- send-inquiry.php — emails form submissions to both BioCore addresses
+- assets/ — styles, scripts and images
+- .htaccess — basic security, compression and caching settings
+- sitemap.xml and robots.txt — search-engine discovery
+
+UPLOAD
+1. Back up the existing website before replacing it.
+2. In GoDaddy cPanel, open File Manager and enter public_html.
+3. Upload the CONTENTS of this folder into public_html. Keep .htaccess at the
+   root. If hidden files are not visible, enable “Show Hidden Files” in File
+   Manager settings.
+4. Confirm that PHP is enabled for the hosting account (PHP 8.0 or newer is
+   recommended).
+5. Visit all three pages on desktop and mobile.
+
+FORM ROUTING
+- send-inquiry.php currently sends each inquiry to:
+  mv@biocoresolution.us
+  bt@biocoresolution.us
+- The From address is website@biocoresolution.com. For the best deliverability,
+  create that mailbox/forwarder in the hosting account or replace $fromEmail in
+  send-inquiry.php with a valid mailbox on the hosted domain.
+- Submit a real test from the live website. Confirm delivery to both inboxes and
+  check spam folders. Some hosting plans restrict PHP mail(); if a test fails,
+  ask GoDaddy to enable outgoing PHP mail or connect an authenticated SMTP
+  service.
+- This package emails submissions but does not store a database copy.
+
+LAUNCH CHECKLIST
+- Connect and verify the SSL certificate.
+- Once HTTPS works, uncomment the HTTPS redirect lines at the bottom of
+  .htaccess.
+- Confirm the address and both email addresses.
+- Have BioCore approve every public product category and sample example.
+- Confirm that the current-site photography may be reused outside the former
+  GoDaddy Website Builder before publishing. Replace any image that is not
+  licensed for the new hosting setup.
+- Do not add IRB, FDA, WHO, CLIA or other regulatory claims/logos without
+  BioCore’s written approval and a legal right to use them.
+- Add Google Analytics/Search Console only after IDs and a final privacy notice
+  are approved. No analytics are installed in this package.
+- Test current Safari, Chrome, Edge and Firefox, including keyboard navigation.
+- Submit the form again after the domain and SSL changes are complete.
+
+EDITING
+- Page copy is inside the three .html files.
+- Colors and layout are in assets/css/styles.css.
+- Product filtering, mobile navigation and the cookie notice are in
+  assets/js/main.js.
+- Form recipients and the sender address are near the top of send-inquiry.php.
+
+IMPORTANT
+Availability is intentionally framed as subject to confirmation. This package
+does not publish unapproved IRB, certification, worldwide-shipping, phone,
+LinkedIn or guaranteed-turnaround claims.

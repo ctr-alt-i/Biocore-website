@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact &amp; Sample Inquiry | BioCore Solution</title>
+  <meta name="description" content="Contact BioCore Solution or submit a detailed inquiry for disease-state plasma, serum, controls and specialized biological materials.">
+  <meta name="theme-color" content="#061d33">
+  <link rel="icon" href="assets/images/biocore-logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script defer src="assets/js/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header" data-header>
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="BioCore Solution home"><img src="assets/images/biocore-logo.jpg" width="267" height="200" alt="BioCore Solution"></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" data-nav-toggle><span class="sr-only">Open navigation</span><span></span><span></span><span></span></button>
+      <nav class="primary-nav" id="primary-navigation" aria-label="Primary navigation" data-nav>
+        <a href="index.html">Home / Who We Are</a><a href="products-specializations.html">Products &amp; Specializations</a><a class="active" href="contact.html" aria-current="page">Contact</a><a class="button button-small" href="#inquiry-form">Request Samples</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="contact-hero">
+      <div class="container contact-intro reveal"><p class="eyebrow eyebrow-light">Contact BioCore</p><h1>Let’s discuss your sample requirements.</h1><p>Send the details your team already knows. We will review the request and follow up using the contact information you provide.</p></div>
+    </section>
+
+    <section class="contact-section" id="inquiry-form">
+      <div class="container contact-layout">
+        <aside class="contact-panel reveal">
+          <div class="contact-image"><img src="assets/images/lab-team.jpg" alt="Research team coordinating work in a laboratory" width="2560" height="960"></div>
+          <div class="contact-panel-body"><p class="eyebrow">Direct contact</p><h2>BioCore Solution</h2><p>For general questions or a less structured request, contact our team directly.</p><div class="contact-detail"><span>Email</span><a href="mailto:mv@biocoresolution.us">mv@biocoresolution.us</a><a href="mailto:bt@biocoresolution.us">bt@biocoresolution.us</a></div><div class="contact-detail"><span>Office</span><address>20911 Johnson Street, Suite 101<br>Pembroke Pines, Florida 33029</address></div><p class="contact-note">Please do not send protected health information or other sensitive personal data through this form.</p></div>
+        </aside>
+
+        <div class="form-panel reveal">
+          <div class="form-heading"><p class="eyebrow">Biospecimen inquiry</p><h2>Tell us what you need.</h2><p>Fields marked with an asterisk are required.</p></div>
+          <div class="form-status form-status-success" role="status" tabindex="-1" hidden data-form-status="success"><strong>Thank you. Your inquiry was sent.</strong><span>A BioCore team member will review your request and follow up.</span></div>
+          <div class="form-status form-status-error" role="alert" tabindex="-1" hidden data-form-status="error"><strong>We could not send your inquiry.</strong><span>Please try again or email one of the addresses listed on this page.</span></div>
+          <div class="form-status form-status-error" role="alert" tabindex="-1" hidden data-form-status="invalid"><strong>Please review your information.</strong><span>One or more required fields were missing or invalid.</span></div>
+          <form action="send-inquiry.php" method="post" data-inquiry-form>
+            <input type="hidden" name="form_started" value="" data-form-started>
+            <div class="honeypot" aria-hidden="true"><label for="website">Website</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+            <div class="form-grid">
+              <div class="field"><label for="name">Name <span aria-hidden="true">*</span></label><input id="name" name="name" type="text" autocomplete="name" maxlength="100" required></div>
+              <div class="field"><label for="company">Company <span aria-hidden="true">*</span></label><input id="company" name="company" type="text" autocomplete="organization" maxlength="120" required></div>
+              <div class="field"><label for="email">Work email <span aria-hidden="true">*</span></label><input id="email" name="email" type="email" autocomplete="email" maxlength="160" required></div>
+              <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="40"></div>
+              <div class="field"><label for="sample_type">Sample type <span aria-hidden="true">*</span></label><select id="sample_type" name="sample_type" required><option value="">Select one</option><option>Infectious Disease</option><option>Neurology</option><option>Autoimmune</option><option>Women’s Health</option><option>Pediatrics</option><option>Oncology</option><option>Sepsis</option><option>Healthy Donor</option><option>Custom Collection</option><option>Other / Not Sure</option></select></div>
+              <div class="field"><label for="matrix">Matrix</label><select id="matrix" name="matrix"><option value="">Select or not sure</option><option>Serum</option><option>Plasma</option><option>Whole Blood</option><option>CSF</option><option>Controls</option><option>Other</option><option>Not Sure</option></select></div>
+              <div class="field"><label for="volume">Required volume / quantity</label><input id="volume" name="volume" type="text" maxlength="100" placeholder="e.g., 1 mL × 25 donors"></div>
+              <div class="field"><label for="timeline">Timeline</label><input id="timeline" name="timeline" type="text" maxlength="100" placeholder="e.g., Q4 or within 8 weeks"></div>
+              <div class="field field-full"><label for="criteria">Titer / criteria</label><input id="criteria" name="criteria" type="text" maxlength="300" placeholder="Known titer, demographics, diagnosis, collection or testing criteria"></div>
+              <div class="field field-full"><label for="description">Project description <span aria-hidden="true">*</span></label><textarea id="description" name="description" rows="6" maxlength="3000" placeholder="Describe the research need, relevant specifications and documentation requirements." required></textarea><span class="field-hint">Please do not include patient names or protected health information.</span></div>
+            </div>
+            <label class="consent"><input type="checkbox" name="consent" value="yes" required><span>I agree that BioCore Solution may use this information to respond to my inquiry. <span aria-hidden="true">*</span></span></label>
+            <button class="button button-dark button-submit" type="submit">Send Inquiry <span aria-hidden="true">→</span></button>
+            <p class="form-fallback">If the form does not work on your hosting plan, email <a href="mailto:mv@biocoresolution.us">mv@biocoresolution.us</a> or <a href="mailto:bt@biocoresolution.us">bt@biocoresolution.us</a>.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="privacy-section" id="privacy"><div class="container narrow reveal"><p class="eyebrow">Privacy &amp; website preferences</p><h2>How this package handles information.</h2><p>Inquiry details are submitted to the BioCore email addresses shown on this page. This website package does not include a submission database or analytics tracking. The cookie notice stores only a preference indicating that the notice was accepted. Hosting providers and email services may maintain their own technical logs.</p></div></section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-grid"><div class="footer-brand"><img src="assets/images/biocore-logo.jpg" width="267" height="200" alt="BioCore Solution"><p>Supporting medical research with specialized biological materials and responsive project coordination.</p></div><div><h2>Explore</h2><a href="index.html">Home / Who We Are</a><a href="products-specializations.html">Products &amp; Specializations</a><a href="contact.html">Contact</a></div><div><h2>Contact</h2><a href="mailto:mv@biocoresolution.us">mv@biocoresolution.us</a><a href="mailto:bt@biocoresolution.us">bt@biocoresolution.us</a><p>20911 Johnson Street, Suite 101<br>Pembroke Pines, FL 33029</p></div></div><div class="container footer-bottom"><p>© <span data-year>2026</span> BioCore Solution. All rights reserved.</p><a href="#privacy">Privacy &amp; website preferences</a></div></footer>
+  <aside class="cookie-banner" aria-labelledby="cookie-title" hidden data-cookie-banner><h2 id="cookie-title">Website preferences</h2><p>We use a small cookie to remember that you accepted this notice. No analytics cookies are installed in this package.</p><button class="button button-small button-dark" type="button" data-cookie-accept>Accept</button></aside>
+</body>
+</html>
