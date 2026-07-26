@@ -59,8 +59,10 @@ address { font-style: normal; }
 .primary-nav > a:not(.button) { position: relative; color: #25384b; font-size: .88rem; font-weight: 600; text-decoration: none; }
 .primary-nav > a:not(.button)::after { position: absolute; right: 0; bottom: -10px; left: 0; height: 2px; content: ""; background: var(--blue-600); transform: scaleX(0); transition: transform .2s ease; }
 .primary-nav > a:not(.button):hover::after, .primary-nav > a.active:not(.button)::after { transform: scaleX(1); }
-.nav-toggle { display: none; width: 44px; height: 44px; padding: 10px; background: transparent; border: 0; }
+.nav-toggle { display: none; width: 44px; height: 44px; padding: 10px; background: var(--white); border: 0; border-radius: var(--radius-sm); transition: background-color .2s ease; }
 .nav-toggle span:not(.sr-only) { display: block; height: 2px; margin: 5px 0; background: var(--navy-900); transition: .2s ease; }
+body.nav-open .nav-toggle { background: var(--navy-900); }
+body.nav-open .nav-toggle span:not(.sr-only) { background: var(--white); }
 
 .button { display: inline-flex; min-height: 50px; align-items: center; justify-content: center; gap: 10px; padding: 12px 22px; color: #032238; background: var(--blue-500); border: 1px solid var(--blue-500); border-radius: 999px; box-shadow: 0 10px 25px rgba(32,194,232,.2); font-size: .88rem; font-weight: 700; text-decoration: none; transition: transform .2s ease, background .2s ease, border-color .2s ease, box-shadow .2s ease; }
 .button:hover { background: #54d5ef; border-color: #54d5ef; box-shadow: 0 14px 30px rgba(32,194,232,.28); transform: translateY(-2px); }
