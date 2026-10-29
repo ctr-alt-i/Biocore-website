@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg"><defs>
+<symbol id="specimen" viewBox="0 0 40 40"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5h18M14 5v13L7 31a3 3 0 0 0 3 4h20a3 3 0 0 0 3-4l-7-13V5M11 27h18M17 11h6"/><circle cx="21" cy="23" r="1"/></g></symbol>
+<symbol id="neuron" viewBox="0 0 40 40"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16-7-7m3 3-6 1m6-1 1-6m12 11 8-8m-5 5 6 1m-6-1-1-6M16 25l-7 8m4-5-7-1m7 1 1 7m12-11 6 7m-4-5 6-1m-6 1-1 8M20 13V5"/><path d="m20 13 7 7-7 8-8-8Z"/><circle cx="20" cy="20" r="2"/></g></symbol>
+<symbol id="cells" viewBox="0 0 40 40"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m20 4 9 5v10l-9 5-9-5V9Zm-9 15-8 5v9l8 4 9-5v-8m9-5 8 5v9l-8 4-9-5"/><circle cx="20" cy="14" r="3"/><circle cx="11" cy="28" r="2"/><circle cx="29" cy="28" r="2"/></g></symbol>
+<symbol id="collection" viewBox="0 0 40 40"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13h30v21H5zM14 13V7h12v6M5 21h30M20 17v8m-4-4h8"/></g></symbol>
+</defs></svg>

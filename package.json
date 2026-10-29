@@ -1,0 +1,15 @@
+{
+  "name": "biocore-solution-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "BioCore Solution static website",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "preview": "npm run build && wrangler dev",
+    "deploy": "npm run build && wrangler deploy",
+    "check": "node --check assets/js/main.js && node --check scripts/build.mjs"
+  },
+  "devDependencies": {
+    "wrangler": "4.149.0"
+  }
+}

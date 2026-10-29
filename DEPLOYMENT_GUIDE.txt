@@ -5,7 +5,7 @@ PACKAGE CONTENTS
 - index.html — Home / Who We Are
 - products-specializations.html — products and category filtering
 - contact.html — inquiry page
-- send-inquiry.php — emails form submissions to both BioCore addresses
+- send-inquiry.php — emails form submissions to the BioCore contact address
 - assets/ — styles, scripts and images
 - .htaccess — basic security, compression and caching settings
 - sitemap.xml and robots.txt — search-engine discovery
@@ -23,12 +23,11 @@ UPLOAD
 FORM ROUTING
 - send-inquiry.php currently sends each inquiry to:
   mv@biocoresolution.us
-  bt@biocoresolution.us
 - The From address is website@biocoresolution.com. For the best deliverability,
   create that mailbox/forwarder in the hosting account or replace $fromEmail in
   send-inquiry.php with a valid mailbox on the hosted domain.
-- Submit a real test from the live website. Confirm delivery to both inboxes and
-  check spam folders. Some hosting plans restrict PHP mail(); if a test fails,
+- Submit a real test from the live website. Confirm delivery to the contact inbox and
+  check its spam folder. Some hosting plans restrict PHP mail(); if a test fails,
   ask GoDaddy to enable outgoing PHP mail or connect an authenticated SMTP
   service.
 - This package emails submissions but does not store a database copy.
@@ -37,7 +36,7 @@ LAUNCH CHECKLIST
 - Connect and verify the SSL certificate.
 - Once HTTPS works, uncomment the HTTPS redirect lines at the bottom of
   .htaccess.
-- Confirm the address and both email addresses.
+- Confirm the office and contact email addresses.
 - Have BioCore approve every public product category and sample example.
 - Confirm that the current-site photography may be reused outside the former
   GoDaddy Website Builder before publishing. Replace any image that is not

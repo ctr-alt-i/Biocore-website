@@ -12,7 +12,6 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 $recipients = [
     'mv@biocoresolution.us',
-    'bt@biocoresolution.us',
 ];
 $fromEmail = 'website@biocoresolution.com';
 
