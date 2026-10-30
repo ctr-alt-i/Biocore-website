@@ -1,61 +1,55 @@
-BIOCORE SOLUTION WEBSITE — GODADDY CPANEL DEPLOYMENT
-====================================================
+BIOCORE SOLUTION — CLOUDFLARE DEPLOYMENT
 
-PACKAGE CONTENTS
-- index.html — Home / Who We Are
-- products-specializations.html — products and category filtering
-- contact.html — inquiry page
-- send-inquiry.php — emails form submissions to the BioCore contact address
-- assets/ — styles, scripts and images
-- .htaccess — basic security, compression and caching settings
-- sitemap.xml and robots.txt — search-engine discovery
+Repository: ctr-alt-i/Biocore-website
+Production branch: main
+Cloudflare Worker: biocore-solution
+Cloudflare account: 811e5d391528ff82832edd2162e791ae
+Website: https://biocore-solution.biocoresolution.workers.dev
 
-UPLOAD
-1. Back up the existing website before replacing it.
-2. In GoDaddy cPanel, open File Manager and enter public_html.
-3. Upload the CONTENTS of this folder into public_html. Keep .htaccess at the
-   root. If hidden files are not visible, enable “Show Hidden Files” in File
-   Manager settings.
-4. Confirm that PHP is enabled for the hosting account (PHP 8.0 or newer is
-   recommended).
-5. Visit all three pages on desktop and mobile.
+AUTOMATIC DEPLOYMENT
+The workflow .github/workflows/deploy-cloudflare.yml runs on pushes to main.
+It can also be started from GitHub Actions using Run workflow on main.
+It installs the locked dependencies, checks and builds the site, deploys the
+existing Worker, and compares the live pages and assets with the built files.
+The workflow uses Node.js 24 and the Wrangler version in package-lock.json.
+Only one production deployment runs at a time.
 
-FORM ROUTING
-- send-inquiry.php currently sends each inquiry to:
-  mv@biocoresolution.us
-- The From address is website@biocoresolution.com. For the best deliverability,
-  create that mailbox/forwarder in the hosting account or replace $fromEmail in
-  send-inquiry.php with a valid mailbox on the hosted domain.
-- Submit a real test from the live website. Confirm delivery to the contact inbox and
-  check its spam folder. Some hosting plans restrict PHP mail(); if a test fails,
-  ask GoDaddy to enable outgoing PHP mail or connect an authenticated SMTP
-  service.
-- This package emails submissions but does not store a database copy.
+ONE-TIME CREDENTIAL SETUP
+1. In Cloudflare, open the biocore-solution Worker > Settings > Builds.
+2. Under API token for external CI/CD, create a token limited to this Worker.
+3. Store the token as a GitHub Actions repository secret named
+   CLOUDFLARE_API_TOKEN in ctr-alt-i/Biocore-website.
+4. Push the workflow to main and confirm the first deployment succeeds.
 
-LAUNCH CHECKLIST
-- Connect and verify the SSL certificate.
-- Once HTTPS works, uncomment the HTTPS redirect lines at the bottom of
-  .htaccess.
-- Confirm the office and contact email addresses.
-- Have BioCore approve every public product category and sample example.
-- Confirm that the current-site photography may be reused outside the former
-  GoDaddy Website Builder before publishing. Replace any image that is not
-  licensed for the new hosting setup.
-- Do not add IRB, FDA, WHO, CLIA or other regulatory claims/logos without
-  BioCore’s written approval and a legal right to use them.
-- Add Google Analytics/Search Console only after IDs and a final privacy notice
-  are approved. No analytics are installed in this package.
-- Test current Safari, Chrome, Edge and Firefox, including keyboard navigation.
-- Submit the form again after the domain and SSL changes are complete.
+The token must never be committed, printed in logs, or pasted into chat.
+The account ID is public configuration and is pinned in the workflow and
+wrangler.jsonc. The token is provided only to the deployment step.
+Cloudflare's separate Git integration is not needed for this workflow.
 
-EDITING
-- Page copy is inside the three .html files.
-- Colors and layout are in assets/css/styles.css.
-- Product filtering, mobile navigation and the cookie notice are in
-  assets/js/main.js.
-- Form recipients and the sender address are near the top of send-inquiry.php.
+AUTHENTICATION
+GitHub and Cloudflare do not need matching login email addresses.
+The repository remains owned by ctr-alt-i. Its existing GitHub CLI and SSH
+credentials can manage the repository independently of browser sign-ins.
+Creating another GitHub account does not move or grant access to this repo.
 
-IMPORTANT
-Availability is intentionally framed as subject to confirmation. This package
-does not publish unapproved IRB, certification, worldwide-shipping, phone,
-LinkedIn or guaranteed-turnaround claims.
+LOCAL CHECKS
+  npm ci
+  npm run check
+  npm run build
+  npx wrangler deploy --dry-run
+
+MANUAL DEPLOYMENT
+Use the project's existing BioCore Wrangler profile and confirm the account:
+  npx wrangler whoami
+  npm run deploy
+  node scripts/verify-deployment.mjs
+
+PUBLIC FILES AND INQUIRIES
+The build publishes only the HTML pages, assets, security headers, robots.txt,
+and sitemap.xml from dist/. It excludes source-control metadata, credentials,
+dependencies, documentation, review images, scripts, and the legacy PHP handler.
+The contact form prepares an email draft locally for mv@biocoresolution.us;
+visitors review and send it in their own email app. The site does not send mail.
+
+GitHub Pages is a separate deployment and does not update the Cloudflare site.
+For Cloudflare deployment results, use the Deploy BioCore to Cloudflare workflow.
